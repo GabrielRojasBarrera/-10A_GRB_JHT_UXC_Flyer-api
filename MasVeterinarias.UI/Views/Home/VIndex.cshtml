@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MasVeterinarias.UI.Models.Veterinaria>
+@{
+    ViewData["Title"] = "Veterinaria Page";
+    Layout = "_LayoutV";
+}
+
+<div class="container min-vh-100">
+
+    <h1 class="my-4 text-secondary font-italic">Bienvenido</h1>
+
+    <div class="row">
+        <!-- /.col-lg-3 -->
+
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <a><img class="card-img-top" src="~/Uploads/Banners/@item.Imagen"></a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="/Veterinaria/Details_Blog/@item.Id"> @Html.DisplayFor(modelItem => item.Nombre)</a>
+                        </h4>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.Telefono)</p>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.Direccion)</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+    <!-- /.row -->
+
+</div>
